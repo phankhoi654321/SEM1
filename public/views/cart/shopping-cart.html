@@ -1,0 +1,134 @@
+
+<div nav-bar class="navbar navbar-fixed-top"></div>
+
+<div style="width: 100%; height: 300px; background-image: url('../../images/background/shoppingcart.jpg'); margin-top: 50px ">
+    <div class="container">
+        <h1 style="color: #1598ed; margin: auto; text-transform: uppercase; position: relative; top: 200px; font-weight: 600; font-size: 40px; letter-spacing: 6px">Shopping Cart</h1>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 " >
+
+            <table class="table table-hover smallCart" >
+                <thead>
+                    <tr  class="style-cart">
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th class="text-right">Price</th>
+                        <th> </th>
+                    </tr>
+                    </thead>
+                <tbody>
+                    <!-- empty cart message -->
+                    <tr ng-hide="cart.getTotalCount() > 0" >
+                        <td class="tdCenter" colspan="4">
+                            Your cart is empty.
+                        </td>
+                    </tr>
+
+                    <div>
+                        <tr class=""  ng-repeat="item in cart.items">
+                            <td class="col-xs-9">
+                                <div class="media">
+                                    <a class="thumbnail pull-left search4" href="#">  <img ng-src="{{item.branch}}" alt="{{product.name}}" style="width: 300px; height: 173px;"> </a>
+                                    <div class="media-body">
+                                        <h5 class="style-cart" style="padding-left: 5px"><a href="#">{{item.name}}</a></h5>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-xs-1">
+                                <input
+                                        class="text-center form-control"  type="number"
+                                        ng-model="item.quantity"
+                                        ng-change="cart.saveItems()"
+                                />
+                            </td>
+                            <td class="col-xs-1 text-right">{{item.price * item.quantity | currency:$:0}}</td>
+
+                            <td class="col-xs-1 search4">
+                                <a href="" ng-click="cart.removeItem(item)" class="btn btn-sm btn-danger" >
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr >
+                            <td>   </td>
+                            <td><h5>Subtotal</h5></td>
+                            <td class="text-right"><h5><strong>{{cart.getTotalPrice() | currency:$:0}}</strong></h5></td>
+                            <td>   </td>
+                        </tr>
+                        <tr >
+                            <td>   </td>
+                            <td>
+                                <h5>Estimated shipping</h5>
+                            </td>
+                            <td class="text-right" ><h5><strong>{{cart.getTotalPrice() * 0.1 | currency:$:0}}</strong></h5></td>
+                            <td>   </td>
+                        </tr>
+                        <tr >
+                            <td>   </td>
+                            <td>
+                                <h3>Total</h3>
+                            </td>
+                            <td class="text-right"><h3><strong>{{cart.getTotalPrice() + cart.getTotalPrice() * 0.1  | currency:$:0}}</strong></h3></td>
+                            <td>   </td>
+                        </tr>
+                        <tr >
+                            <td>   </td>
+                            <td>
+                                <button class=" pull-right btn btn-danger " ng-click="cart.clearItems()" ng-hide="cart.getTotalCount() < 1" >
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                    Clear Cart
+                                </button > 
+                            </td>
+                            <td class="search3">
+                                <a href="/" role="button" class="btn btn-default pull-right ">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                                </a></td>
+                            <td>
+                                <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                                    <!-- Specifies Buy Now Button -->
+                                    <input type="hidden" name="cmd" value="_xclick">
+                                    <!-- PayPal Email -->
+                                    <input type="hidden" name="business" value="maikhanh123@gmail.com">
+                                    <!-- Item Name -->
+                                    <input type="hidden" name="item_name" value="Motorcycle">
+                                    <!-- Item ID -->
+                                    <input type="hidden" name="item_number" value="{{cart.getTotalCount()}}">
+                                    <!-- Currency Code -->
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <!-- Price -->
+                                    <input type="hidden" name="amount" value="{{cart.getTotalPrice()}}">
+                                    <!-- Specify Shipping -->
+                                    <input type='hidden' name='no_shipping' value='1'>
+                                    <!-- Return method -->
+                                    <input type='hidden' name='rm' value='2'>
+                                    <!-- Return URL -->
+                                    <input type="hidden" name="return" value="http://localhost:8080">
+                                    <!-- Cancel Return URL -->
+                                    <input type="hidden" name="cancel_return" value="http://localhost:8080">
+                                    <!-- Button -->
+                                    <button class="btn btn-success " ng-hide="cart.getTotalCount() < 1">Buy Now <span class="glyphicon glyphicon-play"></span> </button>
+                                    <!--<input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_107x26.png" name="submit" alt="Buy Now">-->
+                                </form>
+
+                                <!--<button type="button" class="btn btn-success">-->
+                                <!--Checkout <span class="glyphicon glyphicon-play"></span>-->
+                                <!--</button>-->
+                            </td>
+                        </tr>
+                    </div>
+                    </tbody>
+                </table>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<br>

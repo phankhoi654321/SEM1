@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="/">
+
+	<title>Team 1 - Drive With Smiles</title>
+	<!-- CSS bootstrap-->
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+	<!--google font-->
+	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i" rel="stylesheet">
+	<!--font for detail product-->
+	<link href="https://fonts.googleapis.com/css?family=Fenix" rel="stylesheet">
+	<!--Custom style-->
+	<link rel="stylesheet" href="css/shopping-cart-style.css">
+	<link rel="stylesheet" href="css/form.css">
+	<link rel="stylesheet" href="css/add-comments.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="css/cover.css">
+	<!--Icon-->
+	<link rel="icon" type="image/x-icon" href="images/icon/motorcycle.jpg">
+	<!-- JQuery -->
+	<script src="jQuery/jquery-3.2.1.js"></script>
+	<!--JS bootstrap-->
+	<script src="bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+
+	<!-- JS -->
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="libs/ng-storage/ngStorage.min.js"></script>
+
+	<!-- ANGULAR CUSTOM -->
+	<script src="js/controllers/StoreCtrl-3.js"></script>
+	<script src="js/controllers/MainCtrl.js"></script>
+	<!--<script src="js/controllers/logout.js"></script> use for clear localStorage-->
+	<script src="js/controllers/NewsCtrl.js"></script>
+	<script src="js/controllers/DetailCtrl.js"></script>
+	<script src="js/appRoutes.js"></script>
+	<script src="js/app.js"></script>
+
+
+</head>
+<body ng-app="myApp">
+
+<!-- ANGULAR DYNAMIC CONTENT -->
+<div ng-view></div>
+
+
+<footer class="footer ">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="link-area">
+					<h3>FOLLOW US</h3>
+					<P>We specialize in selling motor vehicles and associated services.</P>
+					<div class="container col-sm-12 col-md-12 col-lg-12" style="margin-left: -30px;">
+						<div class="col-xs-4" >
+							<i class="fa fa-facebook-square fa-6x" style="font-size: 50px"  aria-hidden="true"></i>
+						</div>
+						<div class="col-xs-4" style="margin-left: -30px;">
+							<i class="fa fa-twitter-square fa-6x" style="font-size: 50px"  aria-hidden="true"></i>
+
+						</div>
+						<div class="col-xs-4" style="margin-left: -30px;">
+							<i class="fa fa-google-plus-square fa-6x" style="font-size: 50px"  aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2 col-md-2 col-lg-2">
+				<div class="link-area">
+					<h3>SITE</h3>
+					<ul class="list-unstyled">
+						<li><a href="#"> FAQ </a></li>
+						<li><a href="#"> SITE MAP</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-3 col-md-3 col-lg-3">
+				<div class="link-area">
+					<h3>PRODUCT</h3>
+					<ul class="list-unstyled">
+						<li><a href="#"> Honda</a></li>
+						<li><a href="#"> Yamaha</a></li>
+						<li><a href="#"> Suzuki</a></li>
+						<li><a href="#"> Kawasaki</a></li>
+						<li><a href="#"> Yamaha</a></li>
+						<li><a href="#"> Suzuki</a></li>
+						<li><a href="#"> Kawasaki</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-3 col-md-3 col-lg-3">
+				<div class="link-area">
+					<h3>FINANCE</h3>
+					<ul class="list-unstyled ">
+						<li><a href="#"> Method Finance</a></li>
+						<li><a href="#"> Insurance</a></li>
+					</ul>
+					<div class="container col-sm-12 col-md-12 col-lg-12" style="margin-left: -30px;margin-top: -20px;">
+						<div class="col-xs-4">
+							<i class="fa fa-cc-paypal fa-6x" style="font-size: 50px"  aria-hidden="true"></i>
+						</div>
+						<div class="col-xs-4">
+							<i class="fa fa-cc-visa fa-6x" style="font-size: 50px"  aria-hidden="true"></i>
+						</div>
+						<div class="col-xs-4">
+							<i class="fa fa-cc-mastercard fa-6x" style="font-size: 50px"  aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section  style="width: 100%; height:auto; text-align: center; margin-bottom: -20px " >
+		<div class="container">
+			<div>
+				<p> <strong>&copy; Copyright Team 1 </strong> </p>
+			</div>
+		</div>
+	</section>
+</footer>
+
+<back-to-top></back-to-top>
+
+
+<!--Facebook comment-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.10';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if($(window).scrollTop() > 200){
+                    $('#fixNav').addClass('fixnav');
+                }else{
+                    $('#fixNav').removeClass('fixnav');
+                }
+            })
+        })
+	</script>
+
+
+</body>
+</html>
